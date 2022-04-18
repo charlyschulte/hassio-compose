@@ -3,7 +3,7 @@
 ## Installation
 
 ```shell
-$ git clone https://github.com/postlund/hassio-compose.git
+$ git clone git@github.com:charlyschulte/hassio-compose.git
 ```
 
 2. Create a `.env` file with `SUPERVISOR_SHARE` pointing to the directory where
