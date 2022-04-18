@@ -1,39 +1,4 @@
-# Hass.io with docker-compose
-
-This is a simple docker compose file to run a full Hass.io system using
-`docker-compose`. The motivation for doing so is to avoid having to install
-additional packages on the host system. Also, in order to simplify installation
-on plain container OSes, like Container OS or RancherOS. It comes with a few
-limitations however, make sure to read about them below.
-
-## Caveats and limitations
-
-Nothing is perfect, so here are few general things you need to know:
-
-* Currently only for x86_64 hosts (based on `qemux86-64-homeassistant`)
-* AppArmor not supported (maybe later)
-* You will get an error regarding *rauc* during startup ([you can ignore it](https://github.com/home-assistant/hassio/issues/560))
-* Since HassOS is not used, upgrade of OS is not supported (related to point above)
-
-The supervisor in particular has a few quriks:
-
-* As it launches containers dynamically (e.g. homeassistant and all the addons),
-  `docker-compose` will not be aware of these containers and cannot mange them
-  them (e.g. stop or remove them)
-* It is designed to run on a system where no one can mess with docker. It will
-  restart containers that crash, but if a container is manually stopped or removed
-  (whilst the supervisor is running), it will treat that as a non-error and do nothing.
-  So if you fiddle with the containers, you are on your down!
-* It keeps track of the last system boot. So
-  if you restart only the supervisor, it will realize that and skip doing things
-  (like re-creating containers). I found this to be a bit annoying, so the last
-  boot tag is reset every time the supervisor is restarted. This makes sure that
-  containers are re-created properly with the sacrifice of a tad slower startup
-  time and maybe a few warnings about containers already running (that can be
-  safely ignored). Just be aware of this.
-
-Other things, like installing addons, upgrading Home Assistant and dealing with
-snapshots works correctly though :blush:
+# Hass.io mit docker-compose
 
 ## Installation
 
