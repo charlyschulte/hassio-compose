@@ -2,16 +2,11 @@
 
 ## Installation
 
-1. Install `docker-compose` according to your operating system, e.g. `apt-get` or
-`pip install docker-compose` in a virtual environment.
-
-2. Clone this repository:
-
 ```shell
 $ git clone https://github.com/postlund/hassio-compose.git
 ```
 
-3. Create a `.env` file with `SUPERVISOR_SHARE` pointing to the directory where
+2. Create a `.env` file with `SUPERVISOR_SHARE` pointing to the directory where
 you want to store all configuration data. __THIS MUST BE AN ABSOLUTE PATH!!!!__
 
 ```shell
@@ -19,7 +14,7 @@ $ cd hassio-compose
 $ echo "SUPERVISOR_SHARE=/home/$USER/hassio-config" > .env
 ```
 
-4. Start Hass.io using `docker-compose`:
+3. Start Hass.io using `docker-compose`:
 
 ```shell
 $ docker-compose up
@@ -65,7 +60,7 @@ hassio_supervisor | 19-05-02 14:29:17 INFO (MainThread) [hassio.tasks] All core 
 hassio_supervisor | 19-05-02 14:29:17 INFO (MainThread) [hassio.core] Hass.io is up and running
 ```
 
-5. Integrate with however you run your docker instances (out of scope)
+4. Integrate with however you run your docker instances (out of scope)
 
 ## Tips & tricks
 
