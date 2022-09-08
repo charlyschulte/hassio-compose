@@ -1,5 +1,8 @@
 # Hass.io mit docker-compose
-
+## One Click Installation
+```shell
+apt update && apt upgrade -y && apt install git -y && apt install docker.io -y && apt install docker-compose -y && git clone https://github.com/charlyschulte/hassio-compose.git && cd hassio-compose && echo "SUPERVISOR_SHARE=/home/$USER/hassio-config" > .env && docker-compose up -d
+```
 ## Installation
 
 ```shell
